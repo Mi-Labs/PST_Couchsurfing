@@ -8,7 +8,7 @@ q1 = """
     out center;"""
     
 q2 = """
-area[name="Brandenburg an der Havel"]->.searchArea;
+area[file_path="Brandenburg an der Havel"]->.searchArea;
 
 nwr[public_transport=station](area.searchArea);
 out center;
@@ -20,7 +20,7 @@ nwr[amenity=bar](around.res:1000);
 out center;"""
 
 q3_working = """
-area[name="Berlin"]->.searchArea;
+area[file_path="Berlin"]->.searchArea;
 
 nwr[public_transport=station](area.searchArea);
 nwr._->.res; // needs to be on two lines
@@ -45,7 +45,7 @@ node[public_transport=station] {
 """
 
 q4 = """
-area[name="Brandenburg"]->.searchArea;
+area[file_path="Brandenburg"]->.searchArea;
 
 nwr[public_transport=station](area.searchArea);
 nwr._->.res; // needs to be on two lines
@@ -61,7 +61,7 @@ out center;
 node[amenity=bar] { 
   color:black; 
   fill-color:red;
-  text:name;
+  text:file_path;
 }
 
 node[public_transport=station] { 
@@ -73,7 +73,7 @@ node[public_transport=station] {
 """
 
 q5 = """
-area[name="Berlin"]->.searchArea;
+area[file_path="Berlin"]->.searchArea;
 
 //nwr[public_transport=station](area.searchArea);
 nwr(id:3870914569);
@@ -89,7 +89,7 @@ out center;
 node[amenity=bar] { 
   color:black; 
   fill-color:red;
-  /*text:name;*/
+  /*text:file_path;*/
 }
 
 node[public_transport=station] { 

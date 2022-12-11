@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from pathlib import Path
 import os
 from flask_dropzone import Dropzone
+import contact_handler as ch
 import main
 
 app = Flask(__name__,template_folder='template')
@@ -49,7 +50,7 @@ def uploade():
     if f:
         file_path = Path(os.path.abspath("."), 'kontakte.vcf')
         f.save(file_path)
-    main.vcf_read()
+    ch.vcf_read()
     return render_template(uploade_website)
 
 
